@@ -38,8 +38,7 @@ app.get("/books", (req, res) => {
 readdirSync("./routes").map((r) => {
   const route = async () => {
     let {router} = await import("./routes/" + r);
-    console.log(router);
-    return app.use("/", router());
+    return app.use("/", router);
   };
   route()
 });
