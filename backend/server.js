@@ -4,9 +4,21 @@ import cors from "cors";
 const app = express();
 const PORT = 8000;
 
-const options = {
-  origin: "https://localhost:3000",
-  useSuccessStatus: 200,
+const options = (req, res) => {
+  let tmp;
+  let origin = req.header("origin");
+  let allowed = ["http://localhost:3000", "http://localhost:4000"];
+  if (allowed.indexOf(origin) > -1) {
+    tmp = {
+      origin: true,
+      optionSuccessStatus: 200,
+    };
+  } else {
+    tmp = {
+      origin: "Not allow",
+    };
+  }
+  res(null, tmp);
 };
 
 app.use(cors(options));
