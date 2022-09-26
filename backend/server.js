@@ -40,7 +40,7 @@ readdirSync("./routes").map((r) => {
   const route = async () => {
     let {default: module} = await import("./routes/" + r);
     console.log(module);
-    return app.use("/", module());
+    return app.use("/", module ());
   };
   route()
 });
