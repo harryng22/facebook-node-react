@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import userRoutes from './routes/user'
 
 const app = express();
 const PORT = 8000;
@@ -30,6 +31,8 @@ app.get("/", (req, res) => {
 app.get("/books", (req, res) => {
   res.send("Welcome to books");
 });
+
+app.use()
 
 app.listen(PORT, () => {
   console.log(`Server is listening at port ${PORT}`);
