@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import userRoutes from "./routes/user.js";
 import { readdirSync } from "fs";
 import { createRequire } from "module";
 
@@ -38,9 +37,9 @@ app.get("/books", (req, res) => {
 
 readdirSync("./routes").map((r) => {
   const route = async () => {
-    let {default: module} = await import("./routes/" + r);
-    console.log(module);
-    return app.use("/", module());
+    let {router} = await import("./routes/" + r);
+    console.log(router);
+    return app.use("/", router());
   };
   route()
 });
