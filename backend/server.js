@@ -24,14 +24,6 @@ const options = (req, res) => {
 
 app.use(cors(options));
 
-app.get("/", (req, res) => {
-  res.send("Welcome home");
-});
-
-app.get("/books", (req, res) => {
-  res.send("Welcome to books");
-});
-
 readdirSync("./routes").map((r) => {
   const route = async () => {
     let {router} = await import("./routes/" + r);
