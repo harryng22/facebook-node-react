@@ -36,9 +36,11 @@ app.get("/books", (req, res) => {
   res.send("Welcome to books");
 });
 
-readdirSync("./routes").map(async (r) => {
-  let router = await import("./routes/" + r);
-  return app.use("/", router.default());
+readdirSync("./routes").map((r) => {
+  console.log("./routes/" + r);
+  let module = import("./routes/" + r);
+  console.log(module);
+  return app.use("/", module.default());
 });
 
 app.listen(PORT, () => {
