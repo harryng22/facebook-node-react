@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 
 const app = express();
+const router = express.Router();
 const PORT = 8000;
 
 const options = (req, res) => {
