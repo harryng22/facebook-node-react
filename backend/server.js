@@ -32,7 +32,7 @@ app.get("/books", (req, res) => {
   res.send("Welcome to books");
 });
 
-app.use("/", userRoutes);
+app.use("/api", userRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is listening at port ${PORT}`);
