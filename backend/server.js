@@ -1,9 +1,6 @@
 import express from "express";
 import cors from "cors";
 import { readdirSync } from "fs";
-import { createRequire } from "module";
-
-const require = createRequire(import.meta.url);
 
 const app = express();
 const PORT = 8000;
