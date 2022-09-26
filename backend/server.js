@@ -37,8 +37,8 @@ app.get("/books", (req, res) => {
 });
 
 readdirSync("./routes").map(async (r) => {
-  let route = await import("./routes/" + r);
-  return app.use("/", route());
+  let router = await import("./routes/" + r);
+  return app.use("/", router.default());
 });
 
 app.listen(PORT, () => {
