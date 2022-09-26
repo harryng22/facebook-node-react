@@ -37,7 +37,7 @@ app.get("/books", (req, res) => {
   res.send("Welcome to books");
 });
 
-readdirSync("./routes").map(async (r) => app.use("/", await import("./routes/" + r)));
+readdirSync("./routes").map(async (r) => app.use("/", await import("./routes/" + r)()));
 
 app.listen(PORT, () => {
   console.log(`Server is listening at port ${PORT}`);
