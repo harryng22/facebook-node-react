@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import userRoutes from "./routes/user.js";
+import {readdirSync} from 'fs'
 
 const app = express();
 const PORT = 8000;
@@ -32,7 +33,7 @@ app.get("/books", (req, res) => {
   res.send("Welcome to books");
 });
 
-app.use("/api", userRoutes);
+readdirSync('./routes').map(r => app.use("/", require("./routes/") + r))
 
 app.listen(PORT, () => {
   console.log(`Server is listening at port ${PORT}`);
