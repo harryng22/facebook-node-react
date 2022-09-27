@@ -116,10 +116,22 @@ const userSchema = mongoose.Schema({
     },
     relationship: {
       type: String,
-      enum: ['Single', 'In a relationship', 'Married']
+      enum: ["Single", "In a relationship", "Married"],
     },
     instagram: {
       type: String,
     },
   },
+  savedPosts: [
+    {
+      post: {
+        type: ObjectId,
+        ref: "Post",
+      },
+      savedAt: {
+        type: Date,
+        default: new Date(),
+      },
+    },
+  ],
 });
