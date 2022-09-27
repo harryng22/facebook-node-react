@@ -40,6 +40,11 @@ const userSchema = mongoose.Schema({
     },
     gender: {
         type: String,
+        required: [true, "Gender is required"],
+        trim: true
+    },
+    birthYear: {
+        type: Number,
         required: [true, "Email is required"],
         trim: true
     },
