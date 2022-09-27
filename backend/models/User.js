@@ -20,11 +20,28 @@ const userSchema = mongoose.Schema({
         text: true,
         unique: true
     },
-    first_name: {
+    email: {
         type: String,
-        required: [true, "First name is required"],
-        trim: true,
-        text: true
+        required: [true, "Email is required"],
+        trim: true
+    },
+    password: {
+        type: String,
+        required: [true, "Email is required"]
+    },
+    picture: {
+        type: String,
+        default: "https://gravatar.com/avatar/16e7992c7357bd9b986f3c45578c72db?s=400&d=mp&r=x"
+    },
+    email: {
+        type: String,
+        required: [true, "Email is required"],
+        trim: true
+    },
+    email: {
+        type: String,
+        required: [true, "Email is required"],
+        trim: true
     },
     
 })
