@@ -1,9 +1,11 @@
 import express from "express";
 import cors from "cors";
 import { readdirSync } from "fs";
+import dotenv from 'dotenv';
+dotenv.config()
 
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT;
 
 const options = (req, res) => {
   let tmp;
