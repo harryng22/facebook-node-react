@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 import { readdirSync } from "fs";
-import dotenv from 'dotenv';
-import mongoose from 'mongoose'
-dotenv.config()
+import dotenv from "dotenv";
+import mongoose from "mongoose";
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT;
@@ -31,13 +31,19 @@ app.use(cors(options));
 // routes
 readdirSync("./routes").map((r) => {
   const route = async () => {
-    let {router} = await import("./routes/" + r);
+    let { router } = await import("./routes/" + r);
     return app.use("/", router);
   };
-  route()
+  route();
 });
 
 // database
+mongoose
+  .connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true,
+  })
+  .then(() => console.log("DB connected successfully"))
+  .catch((err) => console.log("Error connecting mongodb", err));
 
 app.listen(PORT, () => {
   console.log(`Server is listening at port ${PORT}`);
