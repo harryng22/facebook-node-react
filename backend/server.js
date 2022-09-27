@@ -7,6 +7,7 @@ dotenv.config()
 const app = express();
 const PORT = process.env.PORT;
 
+// cors
 const options = (req, res) => {
   let tmp;
   let origin = req.header("origin");
@@ -26,6 +27,7 @@ const options = (req, res) => {
 
 app.use(cors(options));
 
+// routes
 readdirSync("./routes").map((r) => {
   const route = async () => {
     let {router} = await import("./routes/" + r);
@@ -33,6 +35,8 @@ readdirSync("./routes").map((r) => {
   };
   route()
 });
+
+// database
 
 app.listen(PORT, () => {
   console.log(`Server is listening at port ${PORT}`);
