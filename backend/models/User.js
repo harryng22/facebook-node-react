@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+const {ObjectId} = mongoose.Schema;
+
 const userSchema = mongoose.Schema({
     first_name: {
         type: String,
@@ -78,5 +80,12 @@ const userSchema = mongoose.Schema({
         type: Array,
         default: []
     },
-    
+    search: [
+        {
+            user:{
+                type: ObjectId,
+                ref: 'User'
+            }
+        }
+    ]
 })
