@@ -58,10 +58,9 @@ const userSchema = mongoose.Schema({
         required: true,
         trim: true
     },
-    birthYear: {
-        type: Number,
-        required: true,
-        trim: true
+    verified: {
+        type: Boolean,
+        default: false
     },
     birthYear: {
         type: Number,
