@@ -26,6 +26,8 @@ const options = (req, res) => {
   res(null, tmp);
 };
 
+app.use(express.json());
+
 app.use(cors(options));
 
 // routes
