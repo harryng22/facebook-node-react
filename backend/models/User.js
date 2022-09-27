@@ -45,7 +45,27 @@ const userSchema = mongoose.Schema({
     },
     birthYear: {
         type: Number,
-        required: [true, "Email is required"],
+        required: true,
+        trim: true
+    },
+    birthMonth: {
+        type: Number,
+        required: true,
+        trim: true
+    },
+    birthDay: {
+        type: Number,
+        required: true,
+        trim: true
+    },
+    birthYear: {
+        type: Number,
+        required: true,
+        trim: true
+    },
+    birthYear: {
+        type: Number,
+        required: true,
         trim: true
     },
     
