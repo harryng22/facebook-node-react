@@ -31,14 +31,14 @@ const userSchema = mongoose.Schema({
     },
     picture: {
         type: String,
+        trim: true,
         default: "https://gravatar.com/avatar/16e7992c7357bd9b986f3c45578c72db?s=400&d=mp&r=x"
     },
-    email: {
+    cover: {
         type: String,
-        required: [true, "Email is required"],
         trim: true
     },
-    email: {
+    gender: {
         type: String,
         required: [true, "Email is required"],
         trim: true
