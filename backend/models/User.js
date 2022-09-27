@@ -111,7 +111,14 @@ const userSchema = mongoose.Schema({
     currentCity: {
       type: String,
     },
-    bio: {
+    hometown: {
+      type: String,
+    },
+    relationship: {
+      type: String,
+      enum: ['Single', 'In a relationship', 'Married']
+    },
+    instagram: {
       type: String,
     },
   },
