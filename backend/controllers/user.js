@@ -1,3 +1,6 @@
 export const home = (req,res) => {
-    res.send('welcome from user')
+    res.json({
+        message: "test message",
+        error: 'test error'
+    })
 }
