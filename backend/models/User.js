@@ -93,22 +93,22 @@ const userSchema = mongoose.Schema({
     bio: {
       type: String,
     },
-    bio: {
+    otherName: {
       type: String,
     },
-    bio: {
+    job: {
       type: String,
     },
-    bio: {
+    workplace: {
       type: String,
     },
-    bio: {
+    highSchool: {
       type: String,
     },
-    bio: {
+    college: {
       type: String,
     },
-    bio: {
+    currentCity: {
       type: String,
     },
     bio: {
